@@ -6,3 +6,8 @@
     grid-area: sign;
     margin: 0;
 }
+
+.header__sign:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
