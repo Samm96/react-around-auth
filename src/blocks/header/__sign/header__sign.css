@@ -1,0 +1,8 @@
+.header__sign {
+    color: #ffff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    grid-area: sign;
+    margin: 0;
+}

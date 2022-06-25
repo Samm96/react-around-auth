@@ -1,0 +1,8 @@
+.header__container {
+    display: grid;
+    grid-template-areas: 
+        ". email sign";
+    column-gap: 24px;
+    position: absolute;
+    padding-top: 6px;
+}
