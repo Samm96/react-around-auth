@@ -7,3 +7,9 @@
     margin: 0;
     visibility: visible;
 }
+
+@media screen and (max-width: 580px) {
+    .header__email {
+        visibility: hidden;
+    }
+}

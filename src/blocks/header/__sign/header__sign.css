@@ -11,3 +11,9 @@
     opacity: 0.5;
     cursor: pointer;
   }
+
+@media screen and (max-width: 580px) {
+    .header__sign {
+        visibility: hidden;
+    }
+}
