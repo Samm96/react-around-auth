@@ -188,7 +188,7 @@ function App() {
             </Register>
 
             <Login
-            buttonText="Sign Up"
+            buttonText="Log in"
             >
               <input
                 type="text"
