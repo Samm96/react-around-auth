@@ -3,6 +3,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
 import ImagePopup from "./ImagePopup";
+import Login from "./Login";
+import Register from "./Register";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
@@ -159,6 +161,34 @@ function App() {
         <div className="page">
           <div>
             <Header />
+            
+            <Register
+            buttonText="Sign Up"
+            title="Sign Up" 
+            text="Already a member? Log in "
+            >
+              <input
+                type="text"
+                className="register__input"
+                id="email"
+                name="email"
+                placeholder="Email"
+                minLength="2"
+                maxLength="40"
+                required
+              />
+              <input
+                type="text"
+                className="register__input"
+                id="password"
+                name="password"
+                placeholder="Password"
+                minLength="2"
+                maxLength="40"
+                required
+              />
+            </Register>
+
             <Main
               onEditProfileClick={handleEditProfileClick}
               onAddPlaceClick={handleAddPlaceClick}
@@ -168,6 +198,7 @@ function App() {
               onCardLike={handleCardLike}
               cards={cards}
             />
+
             <Footer />
 
             <EditAvatarPopup
