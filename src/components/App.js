@@ -5,6 +5,7 @@ import Main from "./Main";
 import ImagePopup from "./ImagePopup";
 import Login from "./Login";
 import UserForm from "./UserForm";
+import InfoTooltip from "./InfoTooltip";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
@@ -164,6 +165,11 @@ function App() {
               logText= ""
               userEmail= ""
             />
+
+            <InfoTooltip
+            text="Success! You have now been registered."
+            >
+            </InfoTooltip>
           
             <UserForm
             buttonText="Sign Up"
