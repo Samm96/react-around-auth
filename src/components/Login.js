@@ -1,25 +1,36 @@
+import UserForm from "./UserForm";
+
 function Login ({
-    buttonText,
-    name,
-    onSubmit,
-    route,
-    children
+
 }) {
     return(
-        <>
-        <section className="register">
-            <div className="register__container">
-                <h2 className="register__title">Log in</h2>
-                <form name={name} onSubmit={onSubmit} >
-                    <div className="register__input-container">
-                        {children}
-                    </div>
-                    <button className="submit-button submit-button_type_register">{buttonText}</button>
-                    <p className="register__text">Not a member yet? Sign up <a className="register__link" href={route}>here</a>!</p>
-                </form>
-                </div> 
-        </section>
-        </>
+        <UserForm
+            buttonText="Log in"
+            title="Log In"
+            text="Not a member yet? Sign up"
+            route=""
+        >
+            <input
+                type="text"
+                className="user-form__input"
+                id="email"
+                name="email"
+                placeholder="Email"
+                minLength="2"
+                maxLength="40"
+                required
+              />
+              <input
+                type="text"
+                className="user-form__input"
+                id="password"
+                name="password"
+                placeholder="Password"
+                minLength="2"
+                maxLength="40"
+                required
+              />
+        </UserForm>
     )
 }
 

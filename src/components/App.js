@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Main from "./Main";
 import ImagePopup from "./ImagePopup";
 import Login from "./Login";
-import Register from "./Register";
+import UserForm from "./UserForm";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
@@ -165,12 +165,15 @@ function App() {
               userEmail= ""
             />
           
-            <Register
+            <UserForm
             buttonText="Sign Up"
+            title="Sign up"
+            text="Already a member? Log in"
+            route=""
             >
               <input
                 type="text"
-                className="register__input"
+                className="user-form__input"
                 id="email"
                 name="email"
                 placeholder="Email"
@@ -180,7 +183,7 @@ function App() {
               />
               <input
                 type="text"
-                className="register__input"
+                className="user-form__input"
                 id="password"
                 name="password"
                 placeholder="Password"
@@ -188,32 +191,9 @@ function App() {
                 maxLength="40"
                 required
               />
-            </Register>
+            </UserForm>
 
-            <Login
-            buttonText="Log in"
-            >
-              <input
-                type="text"
-                className="register__input"
-                id="email"
-                name="email"
-                placeholder="Email"
-                minLength="2"
-                maxLength="40"
-                required
-              />
-              <input
-                type="text"
-                className="register__input"
-                id="password"
-                name="password"
-                placeholder="Password"
-                minLength="2"
-                maxLength="40"
-                required
-              />
-            </Login>
+            <Login />
 
             <Main
               onEditProfileClick={handleEditProfileClick}

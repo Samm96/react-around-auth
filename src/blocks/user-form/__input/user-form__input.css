@@ -1,4 +1,4 @@
-.register__input {
+.user-form__input {
     margin: 0;
     padding: 0;
     color: #ccc;
@@ -15,6 +15,6 @@
     padding-bottom: 13px;
 }
 
-.register__input:last-child {
+.user-form__input:last-child {
     margin-top: 30px;
 }
