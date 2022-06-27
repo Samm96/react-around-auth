@@ -160,7 +160,10 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <div className="page">
           <div>
-            <Header />
+            <Header 
+              logText= ""
+              userEmail= ""
+            />
           
             <Register
             buttonText="Sign Up"
