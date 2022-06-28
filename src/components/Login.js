@@ -2,14 +2,14 @@ import React from "react";
 import UserForm from "./UserForm";
 
 function Login ({
-
+    route,
 }) {
     return(
         <UserForm
             buttonText="Log in"
             title="Log In"
             text="Not a member yet? Sign up"
-            route=""
+            route={route}
         >
             <input
                 type="text"

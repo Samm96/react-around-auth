@@ -185,7 +185,7 @@ function App() {
               buttonText="Sign Up"
               title="Sign up"
               text="Already a member? Log in"
-              route=""
+              route="/signin"
               >
                 <input
                   type="text"
@@ -217,7 +217,8 @@ function App() {
               </InfoTooltip>
         </Route>
         <Route path="/signin">
-          <Login />
+          <Login 
+            route="/signup"/>
         </Route>
         <Route>
           {isLoggedIn ? (<Redirect to="/" />) : (<Redirect to="/signin" />)}

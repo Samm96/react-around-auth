@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 function UserForm ({
     buttonText,
@@ -19,7 +21,7 @@ function UserForm ({
                         {children}
                     </div>
                     <button className="submit-button submit-button_type_user-form">{buttonText}</button>
-                    <p className="user-form__text">{text} <a className="user-form__link" href={route}>here</a>!</p>
+                    <p className="user-form__text">{text} <Link className="user-form__link" to={route}>here</Link>!</p>
                 </form>
                 </div> 
         </section>
