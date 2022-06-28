@@ -20,7 +20,7 @@ function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = React.useState(false);
   const [isDeleteConfirmPopupOpen, setDeleteConfirmPopupOpen] =
     React.useState(false);
-  const [isInfoToolPopupOpen, setInfoToolPopupOpen ] = React.useState(false);
+  const [isInfoToolPopupOpen, setInfoToolPopupOpen ] = React.useState(true);
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [selectedCardToDelete, setSelectedCardToDelete] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
