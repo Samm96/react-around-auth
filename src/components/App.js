@@ -168,11 +168,7 @@ function App() {
         
         <div className="page">
           <div>
-          
-            <Header 
-              logText= ""
-              userEmail= ""
-            />
+            <Header />
         <Switch>
           <ProtectedRoute exact path="/" loggedIn={isLoggedIn}>
             <Main
@@ -185,6 +181,41 @@ function App() {
               cards={cards}
             />
             </ProtectedRoute>
+        <Route path="/signup">
+          <UserForm
+              buttonText="Sign Up"
+              title="Sign up"
+              text="Already a member? Log in"
+              route=""
+              >
+                <input
+                  type="text"
+                  className="user-form__input"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  minLength="2"
+                  maxLength="40"
+                  required
+                />
+                <input
+                  type="text"
+                  className="user-form__input"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  minLength="2"
+                  maxLength="40"
+                  required
+                />
+              </UserForm>
+        </Route>
+        <Route path="/signin">
+          <Login />
+        </Route>
+        <Route>
+          {isLoggedIn ? (<Redirect to="/" />) : (<Redirect to="/signin" />)}
+        </Route>
         </Switch>
             <Footer />
 
@@ -195,36 +226,7 @@ function App() {
             >
             </InfoTooltip>
           
-            <UserForm
-            buttonText="Sign Up"
-            title="Sign up"
-            text="Already a member? Log in"
-            route=""
-            >
-              <input
-                type="text"
-                className="user-form__input"
-                id="email"
-                name="email"
-                placeholder="Email"
-                minLength="2"
-                maxLength="40"
-                required
-              />
-              <input
-                type="text"
-                className="user-form__input"
-                id="password"
-                name="password"
-                placeholder="Password"
-                minLength="2"
-                maxLength="40"
-                required
-              />
-            </UserForm>
-
-            <Login />
-
+            
 
             <EditAvatarPopup
               isOpen={isEditAvatarPopupOpen}

@@ -1,20 +1,34 @@
 import React from "react";
+import { Route, Link } from "react-router-dom";
+
 
 function Header ({
-  logText,
   userEmail,
-  loggedIn,
-  loggedOut
-
 }) {
   return (
       <header className="header">
         <img src={require("../images/logo.svg")} className="header__logo" alt="Around the U.S. Logo" />
+        <Route exact path="/">
         <div className="header__container">
-          <p className="header__sign">logText</p>
-          <button className={loggedIn ? "header__email" : "header__email_hidden"}>userEmail</button>
+          <button className="header__sign">Log out</button>
+          <p className="header__email">{userEmail}</p>
           <button className="menu-button" alt="Menu"></button>
         </div>
+        </Route>
+        <Route path="/signup">
+        <div className="header__container">
+          <Link className="header__sign" to="/signin">Sign in</Link>
+          <p className="header__email header__email_hidden">{userEmail}</p>
+          <button className="menu-button" alt="Menu"></button>
+        </div>
+        </Route>
+        <Route path="/signin">
+        <div className="header__container">
+          <Link className="header__sign" to="/signup">Sign up</Link>
+          <p className="header__email_hidden">{userEmail}</p>
+          <button className="menu-button" alt="Menu"></button>
+        </div>
+        </Route>
       </header>
   );
 }

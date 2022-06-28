@@ -5,6 +5,10 @@
     line-height: 22px;
     grid-area: sign;
     margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
 }
 
 .header__sign:hover {
