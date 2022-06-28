@@ -18,14 +18,14 @@ function Header ({
         <Route path="/signup">
         <div className="header__container">
           <Link className="header__sign" to="/signin">Sign in</Link>
-          <p className="header__email header__email_hidden">{userEmail}</p>
+          <p className="header__email header__email_hidden">email</p>
           <button className="menu-button" alt="Menu"></button>
         </div>
         </Route>
         <Route path="/signin">
         <div className="header__container">
           <Link className="header__sign" to="/signup">Sign up</Link>
-          <p className="header__email_hidden">{userEmail}</p>
+          <p className="header__email_hidden">email</p>
           <button className="menu-button" alt="Menu"></button>
         </div>
         </Route>
