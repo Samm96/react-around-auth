@@ -162,12 +162,26 @@ function App() {
 
   return (
       <CurrentUserContext.Provider value={currentUser}>
+        
         <div className="page">
           <div>
+          
             <Header 
               logText= ""
               userEmail= ""
             />
+        <Switch>
+            <Main
+              onEditProfileClick={handleEditProfileClick}
+              onAddPlaceClick={handleAddPlaceClick}
+              onEditAvatarClick={handleEditAvatarClick}
+              onCardDeleteClick={handleDeleteConfirmClick}
+              onCardClick={handleCardClick}
+              onCardLike={handleCardLike}
+              cards={cards}
+            />
+        </Switch>
+            <Footer />
 
             <InfoTooltip
             text="Success! You have now been registered."
@@ -206,17 +220,6 @@ function App() {
 
             <Login />
 
-            <Main
-              onEditProfileClick={handleEditProfileClick}
-              onAddPlaceClick={handleAddPlaceClick}
-              onEditAvatarClick={handleEditAvatarClick}
-              onCardDeleteClick={handleDeleteConfirmClick}
-              onCardClick={handleCardClick}
-              onCardLike={handleCardLike}
-              cards={cards}
-            />
-
-            <Footer />
 
             <EditAvatarPopup
               isOpen={isEditAvatarPopupOpen}
