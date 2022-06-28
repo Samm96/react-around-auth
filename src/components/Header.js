@@ -11,7 +11,7 @@ function Header ({
         <div className="header__container">
           <p className="header__sign">logText</p>
           <p className="header__email">userEmail</p>
-          <img src={require("../images/menu.png")} className="header__menu" alt="Menu" />
+          <button className="menu-button" alt="Menu"></button>
         </div>
       </header>
   );

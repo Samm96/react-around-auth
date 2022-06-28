@@ -1,0 +1,19 @@
+.menu-button {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 580px) {
+    .menu-button {
+    background-image: url(../../images/menu.png);
+    height: 18px;
+    width: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    grid-area: sandwich;
+    margin-left: 40px;
+    visibility: visible;
+    padding: 0;
+    }
+}
