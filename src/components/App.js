@@ -149,7 +149,7 @@ function App() {
 
   React.useEffect(() => {
     const closeByEscape = (e) => {
-      if(e.key == "Escape") {
+      if(e.key === "Escape") {
         closeAllPopups();
       }
     }

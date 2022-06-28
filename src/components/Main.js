@@ -30,7 +30,7 @@ const currentUser = React.useContext(CurrentUserContext);
               <img
                 className="profile__image"
                 src={currentUser.avatar}
-                alt="Profile Picture"
+                alt="Profile"
               />
             </div>
             <div className="profile__info">
