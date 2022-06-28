@@ -6,6 +6,7 @@ import ImagePopup from "./ImagePopup";
 import Login from "./Login";
 import UserForm from "./UserForm";
 import InfoTooltip from "./InfoTooltip";
+import MobilePopup from "./MobilePopup";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";

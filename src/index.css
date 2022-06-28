@@ -60,6 +60,12 @@
 @import url(./blocks/delete-button/_type/delete-button_type_deleteConfirm.css);
 @import url(./blocks/popup-form/__input-container/_type/popup-form__input-container_type_profile-picture.css);
 
+@import url(./blocks/popup-mobile/popup-mobile.css);
+@import url(./blocks/popup-mobile/__container/popup-mobile__container.css);
+@import url(./blocks/popup-mobile/__email/popup-mobile__email.css);
+@import url(./blocks/popup-mobile/__logout/popup-mobile__logout.css);
+@import url(./blocks/popup-mobile/_open/popup-mobile_open.css);
+
 @import url(./blocks/edit-button/_type/edit-button_type_profile-image.css);
 @import url(./blocks/profile/__image-container/profile__image-container.css);
 @import url(./blocks/profile/__overlay/profile__overlay.css);
