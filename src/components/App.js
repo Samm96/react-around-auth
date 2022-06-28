@@ -20,6 +20,7 @@ function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = React.useState(false);
   const [isDeleteConfirmPopupOpen, setDeleteConfirmPopupOpen] =
     React.useState(false);
+  const [isInfoToolPopupOpen, setInfoToolPopupOpen ] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [selectedCardToDelete, setSelectedCardToDelete] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -143,6 +144,7 @@ function App() {
     setAddPlacePopupOpen(false);
     setDeleteConfirmPopupOpen(false);
     setSelectedCard(null);
+    setInfoToolPopupOpen(false);
   }
 
   React.useEffect(() => {
@@ -168,6 +170,8 @@ function App() {
 
             <InfoTooltip
             text="Success! You have now been registered."
+            onClose={closeAllPopups}
+            isOpen={isInfoToolPopupOpen}
             >
             </InfoTooltip>
           
