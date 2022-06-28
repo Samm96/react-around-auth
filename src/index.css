@@ -9,6 +9,7 @@
 @import url(./blocks/header/__sign/_out/header__sign_out.css);
 @import url(./blocks/menu-button/menu-button.css);
 @import url(./blocks/header/__container/header__container.css);
+@import url(./blocks/header/__container/_type/header__container_type_signup.css);
 
 @import url(./blocks/user-form/user-form.css);
 @import url(./blocks/user-form/__title/user-form__title.css);

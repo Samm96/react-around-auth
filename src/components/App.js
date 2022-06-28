@@ -165,7 +165,6 @@ function App() {
 
   return (
       <CurrentUserContext.Provider value={currentUser}>
-        
         <div className="page">
           <div>
             <Header />
@@ -209,6 +208,13 @@ function App() {
                   required
                 />
               </UserForm>
+
+              <InfoTooltip
+                  text="Success! You have now been registered."
+                  onClose={closeAllPopups}
+                  isOpen={isInfoToolPopupOpen}
+              >
+              </InfoTooltip>
         </Route>
         <Route path="/signin">
           <Login />
@@ -218,15 +224,6 @@ function App() {
         </Route>
         </Switch>
             <Footer />
-
-            <InfoTooltip
-            text="Success! You have now been registered."
-            onClose={closeAllPopups}
-            isOpen={isInfoToolPopupOpen}
-            >
-            </InfoTooltip>
-          
-            
 
             <EditAvatarPopup
               isOpen={isEditAvatarPopupOpen}

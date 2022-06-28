@@ -10,7 +10,7 @@
 @media screen and (max-width: 580px){
     .header__container {
         grid-template-areas:
-            ". email sign . sandwich";
+            ". email sign sandwich";
         column-gap: 30px;
     }
 } 

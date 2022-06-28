@@ -18,6 +18,8 @@
 
 @media screen and (max-width: 580px) {
     .header__sign {
-        visibility: hidden;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
     }
 }
