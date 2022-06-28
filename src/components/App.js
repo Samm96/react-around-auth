@@ -35,6 +35,11 @@ function App() {
     avatar: "",
   });
 
+  const [isRegistered, setIsRegistered] = React.useState({
+    email: "",
+    password: "",
+  });
+
   const [cards, setCards] = React.useState([]);
 
   React.useEffect(() => {
@@ -210,7 +215,6 @@ function App() {
               </UserForm>
 
               <InfoTooltip
-                  text="Success! You have now been registered."
                   onClose={closeAllPopups}
                   isOpen={isInfoToolPopupOpen}
               >

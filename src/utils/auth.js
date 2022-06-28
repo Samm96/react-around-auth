@@ -6,7 +6,7 @@ function auth ({
     return (
         <Switch>
             <Route path='/signup'></Route>
-            <Route path='/login'></Route>
+            <Route path='/signin'></Route>
         </Switch>
     );
 }
