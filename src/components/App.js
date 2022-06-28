@@ -7,6 +7,7 @@ import ImagePopup from "./ImagePopup";
 import Login from "./Login";
 import UserForm from "./UserForm";
 import InfoTooltip from "./InfoTooltip";
+import ProtectedRoute from "./ProtectedRoute";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
@@ -25,6 +26,8 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [selectedCardToDelete, setSelectedCardToDelete] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
+
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
   const [currentUser, setCurrentUser] = React.useState({
     name: "",
@@ -171,6 +174,7 @@ function App() {
               userEmail= ""
             />
         <Switch>
+          <ProtectedRoute exact path="/" loggedIn={isLoggedIn}>
             <Main
               onEditProfileClick={handleEditProfileClick}
               onAddPlaceClick={handleAddPlaceClick}
@@ -180,6 +184,7 @@ function App() {
               onCardLike={handleCardLike}
               cards={cards}
             />
+            </ProtectedRoute>
         </Switch>
             <Footer />
 
