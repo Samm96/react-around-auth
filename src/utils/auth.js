@@ -9,19 +9,17 @@ export const register = ({ email, password }) => {
         },
         body: JSON.stringify({ email, password }),
     })
-    .then((res) => res.json())
-    .then((data) => {
-        if (data.error) {
-            throw new Error(data.error);
+    .then((res) => {
+        if(res.status === 201) {
+            return res.json();
         }
-        console.log(data)
     })
-    .catch((res) => {
-            res.status(400).send({ message: "One of the fields was filled in incorrectly"});
+    .then((res) => {
+        return res;
     });
 }
 
-export const login = ({ email, password }) => {
+export const login = (email, password) => {
     return fetch(`${BASE_URL}/signin`, {
         method: "POST",
         headers: {
@@ -32,41 +30,28 @@ export const login = ({ email, password }) => {
     })
     .then((res) => res.json())
     .then((data) => {
-        if (data.jwt) {
-            localStorage.setItem("jwt", data.jwt);
-            return data;
-        } else {
-            return;
-        }
-    })
-    .catch((data, res) => {
-        if (!data.jwt) {
-            res.status(401).send({ message: "The user with the specified email not found"})
-        } else {
-            res.status(400).send({ message: "One or more of the fields were not provided"})
-        }
+        // takes the token and email and stores it in local storage
+        localStorage.setItem("jwt", data.jwt);
+        localStorage.setItem("email", email);
+        return data;
     })
 }
 
-export const checkToken = ({ email }) => {
+export const checkToken = (token) => {
     return fetch(`${BASE_URL}/users/me`, {
         method: "GET",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${localStorage.getItem("jwt")}`
-        },
-        body: JSON.stringify({ email }),
-    })
-    .then((res) => res.json())
-    .then((data, res) => {
-        if (data.jwt) {
-            return data;
-        } else {
-            res.status(400).send({ message: "Token not provided or provided in wrong format"});
+            "Authorization": `Bearer ${token}`
         }
-        })
-    .catch((res) => {
-        res.status(401).send({ message: "The provided token is invalid"})
     })
-    }
+    .then((res) => {
+        if (res.status === 200) {
+            return res.json();
+        }
+    })
+    .catch((res) => {
+        return res;
+    });
+}
