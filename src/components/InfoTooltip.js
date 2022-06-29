@@ -5,12 +5,12 @@ function InfoTooltip({ onClose, isOpen, name, onSubmit, status }) {
     <>
       <div className={`popup-form ${isOpen ? "popup-form_open" : ""}`}>
         <div className="popup-form__container popup-form__container_type_picture">
-          <form name={name} onSubmit={onSubmit} noValidate>
-            <button
+        <button
               type="button"
               className="close-button"
-              onClose={onClose}
+              onClick={onClose}
             ></button>
+          <form name={name} onSubmit={onSubmit} noValidate>
             {status === "success" ? (
               <>
                 <img
