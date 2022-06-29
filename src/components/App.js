@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Main from "./Main";
 import ImagePopup from "./ImagePopup";
 import Login from "./Login";
-import UserForm from "./UserForm";
+import Register from "./Register";
 import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
 import { api } from "../utils/Api";
@@ -33,11 +33,6 @@ function App() {
     name: "",
     about: "",
     avatar: "",
-  });
-
-  const [isRegistered, setIsRegistered] = React.useState({
-    email: "",
-    password: "",
   });
 
   const [cards, setCards] = React.useState([]);
@@ -168,6 +163,7 @@ function App() {
     return () => document.removeEventListener("keydown", closeByEscape);
   }, []);
 
+
   return (
       <CurrentUserContext.Provider value={currentUser}>
         <div className="page">
@@ -186,34 +182,8 @@ function App() {
             />
             </ProtectedRoute>
         <Route path="/signup">
-          <UserForm
-              buttonText="Sign Up"
-              title="Sign up"
-              text="Already a member? Log in"
-              route="/signin"
-              >
-                <input
-                  type="text"
-                  className="user-form__input"
-                  id="email"
-                  name="email"
-                  placeholder="Email"
-                  minLength="2"
-                  maxLength="40"
-                  required
-                />
-                <input
-                  type="text"
-                  className="user-form__input"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  minLength="2"
-                  maxLength="40"
-                  required
-                />
-              </UserForm>
-
+          <Register 
+          route="/signin"/>
               <InfoTooltip
                   onClose={closeAllPopups}
                   isOpen={isInfoToolPopupOpen}
