@@ -8,6 +8,7 @@ import Login from "./Login";
 import Register from "./Register";
 import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
+import MobilePopup from "./MobilePopup";
 import * as auth from "../utils/auth";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
@@ -217,6 +218,7 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <div className="page">
           <div>
+            <MobilePopup />
             <Header 
             userEmail={isLoggedIn ? userEmail : ""}
             />

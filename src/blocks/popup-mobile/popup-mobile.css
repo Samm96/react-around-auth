@@ -1,3 +1,4 @@
 .popup-mobile {
     visibility: hidden;
+    position: fixed;
 }
