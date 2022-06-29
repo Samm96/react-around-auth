@@ -1,7 +1,5 @@
 import React from "react";
 import UserForm from "./UserForm";
-import auth from "../utils/auth";
-import { useHistory } from "react-router-dom";
 
 function Register({ onRegister, route }) {
   const [email, setEmail] = React.useState("");

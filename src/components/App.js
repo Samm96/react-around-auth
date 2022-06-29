@@ -8,7 +8,7 @@ import Login from "./Login";
 import Register from "./Register";
 import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
-import auth from "../utils/auth";
+import * as auth from "../utils/auth";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
@@ -39,6 +39,8 @@ function App() {
     avatar: "",
   });
 
+  const [userEmail, setUserEmail] = React.useState("");
+
   const [cards, setCards] = React.useState([]);
 
   const userHistory = useHistory();
@@ -62,15 +64,25 @@ function App() {
       });
   }
 
-
-
-
-
-
-
-
-
-
+  function onLogin({ email, password }) {
+    auth
+      .login(email, password)
+      .then((res) => {
+        if (res.token) {
+          setIsLoggedIn(true);
+          setUserEmail(email);
+          localStorage.setItem("jwt", res.token);
+          userHistory.push("/");
+        } else {
+          setInfoToolStatus("fail");
+          setInfoToolPopupOpen(true);
+        }
+      })
+      .catch((err) => {
+        setInfoToolStatus("fail");
+        setInfoToolPopupOpen(true);
+      });
+  }
 
 
 
@@ -223,21 +235,23 @@ function App() {
           route="/signin"
           onRegister={onRegister}
           />
-              <InfoTooltip
-                  onClose={closeAllPopups}
-                  isOpen={isInfoToolPopupOpen}
-              >
-              </InfoTooltip>
         </Route>
         <Route path="/signin">
           <Login 
-            route="/signup"/>
+            route="/signup"
+            onLogin={onLogin}/>
         </Route>
         <Route>
           {isLoggedIn ? (<Redirect to="/" />) : (<Redirect to="/signin" />)}
         </Route>
         </Switch>
             <Footer />
+
+            <InfoTooltip
+                  onClose={closeAllPopups}
+                  isOpen={isInfoToolPopupOpen}
+              >
+              </InfoTooltip>
 
             <EditAvatarPopup
               isOpen={isEditAvatarPopupOpen}
