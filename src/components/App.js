@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Route, Redirect, Switch, useHistory } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Main from "./Main";
@@ -8,6 +8,7 @@ import Login from "./Login";
 import Register from "./Register";
 import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
+import auth from "../utils/auth";
 import { api } from "../utils/Api";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
@@ -22,7 +23,10 @@ function App() {
   const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = React.useState(false);
   const [isDeleteConfirmPopupOpen, setDeleteConfirmPopupOpen] =
     React.useState(false);
+
   const [isInfoToolPopupOpen, setInfoToolPopupOpen ] = React.useState(false);
+  const [isInfoToolStatus, setInfoToolStatus] = React.useState("");
+
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [selectedCardToDelete, setSelectedCardToDelete] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -36,6 +40,39 @@ function App() {
   });
 
   const [cards, setCards] = React.useState([]);
+
+  const userHistory = useHistory();
+
+  function onRegister({email, password}) {
+    auth
+      .register(email, password)
+      .then((res) => {
+        if (res.data_id) {
+          setInfoToolStatus("success");
+          setInfoToolPopupOpen(true);
+          userHistory.push("/signin");
+        } else {
+          setInfoToolStatus("fail");
+          setInfoToolPopupOpen(true);
+        }
+      })
+      .catch((err) => {
+        setInfoToolStatus("fail");
+        setInfoToolPopupOpen(true);
+      });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
   React.useEffect(() => {
     api
@@ -183,7 +220,9 @@ function App() {
             </ProtectedRoute>
         <Route path="/signup">
           <Register 
-          route="/signin"/>
+          route="/signin"
+          onRegister={onRegister}
+          />
               <InfoTooltip
                   onClose={closeAllPopups}
                   isOpen={isInfoToolPopupOpen}
