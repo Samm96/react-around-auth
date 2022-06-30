@@ -27,6 +27,7 @@ function App() {
 
   const [isInfoToolPopupOpen, setInfoToolPopupOpen ] = React.useState(false);
   const [isInfoToolStatus, setInfoToolStatus] = React.useState("");
+  const [isMobilePopupOpen, setMobilePopupOpen] = React.useState(false);
 
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [selectedCardToDelete, setSelectedCardToDelete] = React.useState(null);
@@ -215,6 +216,10 @@ function App() {
     setSelectedCard(card);
   }
 
+  function handleMenuClick() {
+    setMobilePopupOpen(true);
+  }
+
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setEditAvatarPopupOpen(false);
@@ -222,6 +227,7 @@ function App() {
     setDeleteConfirmPopupOpen(false);
     setSelectedCard(null);
     setInfoToolPopupOpen(false);
+    setMobilePopupOpen(false);
   }
 
   React.useEffect(() => {
@@ -241,10 +247,17 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <div className="page">
           <div>
-            <MobilePopup />
+            <MobilePopup
+            isOpen={isMobilePopupOpen} 
+            userEmail={userEmail}
+            onLogout={onLogout}
+            />
             <Header 
             userEmail={isLoggedIn ? userEmail : ""}
             onLogout={onLogout}
+            mobilePopup={handleMenuClick}
+            menuOpen={isMobilePopupOpen}
+            onClose={closeAllPopups}
             />
         <Switch>
           <ProtectedRoute exact path="/" loggedIn={isLoggedIn}>

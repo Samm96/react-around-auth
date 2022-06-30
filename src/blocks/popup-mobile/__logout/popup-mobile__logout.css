@@ -5,4 +5,11 @@
     line-height: 22px;
     text-align: center;
     margin: 18px 0 0;
+    background: transparent;
+    border: none;
+}
+
+.popup-mobile__logout:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }

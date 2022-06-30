@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
-import MobilePopup from "./MobilePopup";
-
 
 function Header ({
   userEmail,
-  onLogout
+  onLogout,
+  mobilePopup,
+  menuOpen,
+  onClose
 })
 {
   return (
@@ -15,7 +16,11 @@ function Header ({
         <div className="header__container">
           <button onClick={onLogout} className="header__sign">Log out</button>
           <p className="header__email">{userEmail}</p>
-          <button className="menu-button" alt="Menu" onClick={<MobilePopup />}></button>
+          { menuOpen ? 
+            (<button className="close-button" onClick={onClose} alt="Close"/>) 
+            : 
+            (<button className="menu-button" alt="Menu" onClick={mobilePopup}></button>)
+            }
         </div>
         </Route>
         <Route path="/signup">

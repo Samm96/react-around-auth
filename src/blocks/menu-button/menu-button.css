@@ -12,8 +12,9 @@
     background-color: transparent;
     border: none;
     grid-area: sandwich;
-    margin-left: 40px;
     visibility: visible;
+    margin-left: -64px;
     padding: 0;
+    position: absolute;
     }
 }
