@@ -292,6 +292,7 @@ function App() {
             <InfoTooltip
                   onClose={closeAllPopups}
                   isOpen={isInfoToolPopupOpen}
+                  status={isInfoToolStatus}
               >
               </InfoTooltip>
 
