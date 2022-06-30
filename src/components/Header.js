@@ -5,6 +5,7 @@ import MobilePopup from "./MobilePopup";
 
 function Header ({
   userEmail,
+  onLogout
 })
 {
   return (
@@ -12,7 +13,7 @@ function Header ({
         <img src={require("../images/logo.svg")} className="header__logo" alt="Around the U.S. Logo" />
         <Route exact path="/">
         <div className="header__container">
-          <button className="header__sign">Log out</button>
+          <button onClick={onLogout} className="header__sign">Log out</button>
           <p className="header__email">{userEmail}</p>
           <button className="menu-button" alt="Menu" onClick={<MobilePopup />}></button>
         </div>

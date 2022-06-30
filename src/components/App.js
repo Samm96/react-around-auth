@@ -103,6 +103,12 @@ function App() {
       });
   }
 
+  function onLogout() {
+    localStorage.removeItem("jwt");
+    setIsLoggedIn(false);
+    userHistory.push("/signin");
+  }
+
 
   React.useEffect(() => {
     api
@@ -238,6 +244,7 @@ function App() {
             <MobilePopup />
             <Header 
             userEmail={isLoggedIn ? userEmail : ""}
+            onLogout={onLogout}
             />
         <Switch>
           <ProtectedRoute exact path="/" loggedIn={isLoggedIn}>
