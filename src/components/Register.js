@@ -25,7 +25,7 @@ function Register({ onRegister, route }) {
       onSubmit={handleSubmit}
     >
       <input
-        type="text"
+        type="email"
         className="user-form__input"
         id="email"
         name="email"
