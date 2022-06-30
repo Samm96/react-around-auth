@@ -46,6 +46,24 @@ function App() {
 
   const userHistory = useHistory();
 
+  React.useEffect(() => {
+    const userToken = localStorage.getItem("jwt");
+    if(userToken) {
+      auth
+        .checkToken(userToken)
+        .then((res) => {
+          if(res){
+            setUserEmail(res.data.email);
+            setIsLoggedIn(true);
+            userHistory.push("/");
+          } else {
+            localStorage.removeItem("jwt");
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  }, []);
+
   function onRegister({email, password}) {
     auth
       .register(email, password)
