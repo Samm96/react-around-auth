@@ -38,7 +38,7 @@ function Login ({
                 required
               />
               <input
-                type="text"
+                type="password"
                 className="user-form__input"
                 id="password"
                 name="password"

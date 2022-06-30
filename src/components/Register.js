@@ -14,6 +14,8 @@ function Register({ onRegister, route }) {
     onRegister(userData);
   }
 
+
+
   return (
     <UserForm
       buttonText="Sign Up"
@@ -34,7 +36,7 @@ function Register({ onRegister, route }) {
         required
       />
       <input
-        type="text"
+        type="password"
         className="user-form__input"
         id="password"
         name="password"
