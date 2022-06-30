@@ -1,0 +1,11 @@
+.close-button_type_mobile {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 580px) {
+    .close-button_type_mobile {
+        top: 0;
+        right: 34px;
+        visibility: visible;
+    }
+}

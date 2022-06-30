@@ -11,6 +11,7 @@ onLogout,
                 <p className="popup-mobile__email">{userEmail}</p>
                 <button onClick={onLogout} className="popup-mobile__logout" href={route}>Log out</button>
             </div>
+            <hr className="popup-mobile__line"/>
         </div>
         </>
     )

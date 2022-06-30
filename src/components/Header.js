@@ -17,9 +17,9 @@ function Header ({
           <button onClick={onLogout} className="header__sign">Log out</button>
           <p className="header__email">{userEmail}</p>
           { menuOpen ? 
-            (<button className="close-button" onClick={onClose} alt="Close"/>) 
+            (<button className="close-button close-button_type_mobile" onClick={onClose} alt="Close"/>) 
             : 
-            (<button className="menu-button" alt="Menu" onClick={mobilePopup}></button>)
+            (<button className="menu-button" alt="Menu" onClick={mobilePopup}/>)
             }
         </div>
         </Route>

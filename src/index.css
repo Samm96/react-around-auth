@@ -66,6 +66,8 @@
 @import url(./blocks/popup-mobile/__email/popup-mobile__email.css);
 @import url(./blocks/popup-mobile/__logout/popup-mobile__logout.css);
 @import url(./blocks/popup-mobile/_open/popup-mobile_open.css);
+@import url(./blocks/close-button/_type/close-button_type_mobile.css);
+@import url(./blocks/popup-mobile/__line/popup-mobile__line.css);
 
 @import url(./blocks/edit-button/_type/edit-button_type_profile-image.css);
 @import url(./blocks/profile/__image-container/profile__image-container.css);

@@ -108,6 +108,7 @@ function App() {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     userHistory.push("/signin");
+    closeAllPopups();
   }
 
 
