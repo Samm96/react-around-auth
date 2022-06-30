@@ -68,7 +68,7 @@ function App() {
     auth
       .register(email, password)
       .then((res) => {
-        if (res.data_id) {
+        if (res.data._id) {
           setInfoToolStatus("success");
           setInfoToolPopupOpen(true);
           userHistory.push("/signin");
@@ -102,7 +102,6 @@ function App() {
         setInfoToolPopupOpen(true);
       });
   }
-
 
 
   React.useEffect(() => {
