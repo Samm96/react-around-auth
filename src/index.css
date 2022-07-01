@@ -56,6 +56,7 @@
 @import url(./blocks/popup-form/__picture/popup-form__picture.css);
 @import url(./blocks/popup-form/__text/popup-form__text.css);
 @import url(./blocks/popup-form/__container/_type/popup-form__container_type_picture.css);
+@import url(./blocks/close-button/_type/close-button_type_infoTip.css);
 
 @import url(./blocks/popup-form/__title/_type/popup-form__title_type_deleteConfirm.css);
 @import url(./blocks/delete-button/_type/delete-button_type_deleteConfirm.css);
