@@ -63,7 +63,7 @@ function App() {
         })
         .catch((err) => console.log(err));
     }
-  }, []);
+  }, [userHistory]);
 
   function onRegister({email, password}) {
     auth

@@ -4,8 +4,10 @@
 
 @media screen and (max-width: 580px) {
     .close-button_type_mobile {
+        width: 30px;
+        height: 30px;
         top: 0;
-        right: 34px;
+        right: 36px;
         visibility: visible;
     }
 }
