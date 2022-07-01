@@ -26,7 +26,7 @@ function Header ({
         <Route path="/signup">
         <div className="header__container header__container_type_signup">
           <Link className="header__sign" to="/signin">Sign in</Link>
-          <p className="header__email_hidden">email</p>
+          <p className="header__email header__email_hidden">email</p>
         </div>
         </Route>
         <Route path="/signin">
