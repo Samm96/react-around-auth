@@ -25,7 +25,7 @@ function App() {
   const [isDeleteConfirmPopupOpen, setDeleteConfirmPopupOpen] =
     React.useState(false);
 
-  const [isInfoToolPopupOpen, setInfoToolPopupOpen ] = React.useState(false);
+  const [isInfoToolPopupOpen, setInfoToolPopupOpen ] = React.useState(true);
   const [isInfoToolStatus, setInfoToolStatus] = React.useState("");
   const [isMobilePopupOpen, setMobilePopupOpen] = React.useState(false);
 

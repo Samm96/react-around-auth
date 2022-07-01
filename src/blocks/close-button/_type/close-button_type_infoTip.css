@@ -1,6 +1,8 @@
-.close-button_type_infoTip {
-    right: 44%;
-    top: -62px;
-    width: 30px;
-    height: 30px;
+@media screen and (max-width: 580px) {
+    .close-button_type_infoTip {
+        right: 44%;
+        top: -62px;
+        width: 30px;
+        height: 30px;
+    }
 }
