@@ -1,15 +1,14 @@
 import React from "react";
 
-function DeleteConfirmPopup({ 
-    isOpen, 
-    onClose, 
-    title, 
-    onDeleteCardSubmit,
-    cardToDelete
- }) {
-
-  function handleDelete()  {
-    onDeleteCardSubmit(cardToDelete)
+function DeleteConfirmPopup({
+  isOpen,
+  onClose,
+  title,
+  onDeleteCardSubmit,
+  cardToDelete,
+}) {
+  function handleDelete() {
+    onDeleteCardSubmit(cardToDelete);
   }
 
   return (
@@ -21,17 +20,17 @@ function DeleteConfirmPopup({
           onClick={onClose}
         ></button>
         <h2 className="popup-form__title">{title}</h2>
-            <button
-              type="button"
-              className="delete-button delete-button_type_deleteConfirm"
-              id="confirmation-button"
-              onClick={handleDelete}
-            >
-              Yes
-            </button>
-          </div>
+        <button
+          type="button"
+          className="delete-button delete-button_type_deleteConfirm"
+          id="confirmation-button"
+          onClick={handleDelete}
+        >
+          Yes
+        </button>
       </div>
-  )
+    </div>
+  );
 }
 
 export default DeleteConfirmPopup;

@@ -8,13 +8,11 @@ function Register({ onRegister, route }) {
   function handleSubmit(e) {
     e.preventDefault();
     const userData = {
-        email,
-        password,
+      email,
+      password,
     };
     onRegister(userData);
   }
-
-
 
   return (
     <UserForm
