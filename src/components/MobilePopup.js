@@ -1,6 +1,5 @@
 function MobilePopup({ isOpen, route, userEmail, onLogout }) {
   return (
-    <>
       <div className={`popup-mobile ${isOpen ? "popup-mobile_open" : ""}`}>
         <div className="popup-mobile__container">
           <p className="popup-mobile__email">{userEmail}</p>
@@ -14,7 +13,6 @@ function MobilePopup({ isOpen, route, userEmail, onLogout }) {
         </div>
         <hr className="popup-mobile__line" />
       </div>
-    </>
   );
 }
 

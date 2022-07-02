@@ -2,7 +2,6 @@ import React from "react";
 
 function InfoTooltip({ onClose, isOpen, name, onSubmit, status }) {
   return (
-    <>
       <div className={`popup-form ${isOpen ? "popup-form_open" : ""}`}>
         <div className="popup-form__container popup-form__container_type_picture">
           <button
@@ -37,7 +36,6 @@ function InfoTooltip({ onClose, isOpen, name, onSubmit, status }) {
           </form>
         </div>
       </div>
-    </>
   );
 }
 

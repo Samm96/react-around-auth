@@ -11,7 +11,6 @@ function UserForm({
   text,
 }) {
   return (
-    <>
       <section className="user-form">
         <div className="user-form__container">
           <h2 className="user-form__title">{title}</h2>
@@ -30,7 +29,6 @@ function UserForm({
           </form>
         </div>
       </section>
-    </>
   );
 }
 
