@@ -12,6 +12,10 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, buttonText }) {
     });
   }
 
+  React.useEffect(() => {
+    avatarRef.current.value = ""
+  }, [isOpen]);
+
   return (
     <PopupWithForm
       name="profile pic"

@@ -290,7 +290,7 @@ function App() {
             onClose={closeAllPopups}
             isOpen={isInfoToolPopupOpen}
             status={isInfoToolStatus}
-          ></InfoTooltip>
+          />
 
           <EditAvatarPopup
             isOpen={isEditAvatarPopupOpen}
