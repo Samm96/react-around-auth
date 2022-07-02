@@ -9,13 +9,10 @@ export const register = (email, password) => {
     body: JSON.stringify({ email, password }),
   })
     .then((res) => {
-      if (res.status === 200) {
+      if (res.status === 201) {
         return res.json();
       }
     })
-    .then((res) => {
-      return res;
-    });
 };
 
 export const login = (email, password) => {
@@ -28,12 +25,6 @@ export const login = (email, password) => {
     body: JSON.stringify({ email, password }),
   })
     .then((res) => res.json())
-    .then((data) => {
-      // takes the token and email and stores it in local storage
-      localStorage.setItem("jwt", data.jwt);
-      localStorage.setItem("email", email);
-      return data;
-    });
 };
 
 export const checkToken = (token) => {

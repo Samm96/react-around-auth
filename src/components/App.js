@@ -92,6 +92,7 @@ function App() {
           setIsLoggedIn(true);
           setUserEmail(email);
           localStorage.setItem("jwt", res.token);
+          localStorage.setItem("email", email);
           userHistory.push("/");
         } else {
           setInfoToolStatus("fail");
